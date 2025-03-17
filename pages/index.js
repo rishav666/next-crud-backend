@@ -18,7 +18,7 @@ export default function DataTable() {
   const loadData = async () => {
     setLoading(true);
     try {
-      const response = await axios.get('http://localhost:4000/');
+      const response = await axios.get(API_URL);
       const allData = Object.values(response.data);
       const filteredData = filters
         ? allData.filter((item) => item.name.toLowerCase().includes(filters.toLowerCase()))
